@@ -6,7 +6,7 @@ function Header() {
     <div id='header-container'>
       <Navigation />
       <h1>
-        Welcome to !Find: Never Forget & ∞ Remember ∞
+        Welcome to !Forget
       </h1>
     </div>
   )
