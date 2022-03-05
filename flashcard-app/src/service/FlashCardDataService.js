@@ -18,3 +18,5 @@ class FlashCardDataService {
     return axios.delete(`http://localhost:8080/flashcards/${id}`)
   }
 }
+
+export default new FlashCardDataService();
