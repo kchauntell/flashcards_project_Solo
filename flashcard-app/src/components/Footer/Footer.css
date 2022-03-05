@@ -1,5 +1,5 @@
-#header-container {
-  background-color: rgba(95, 95, 97, 0.829);
+#footer-container {
+    background-color: rgba(95, 95, 97, 0.829);
   background: url("../../colorfulclouds.png") no-repeat center bottom fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -7,13 +7,11 @@
   background-size: cover;
   color: white;
   padding: 2px;
-  top: 0;
+  bottom: 0;
+  position: absolute;
   width: 100%;
   text-align: center;
   border-bottom: 5px solid rgb(121, 31, 238);
   text-shadow: 1px 1px 5px hotpink, 0 0 2em blue, 0 0 0.3em blue;
-}
-
-h1 {
-  margin-bottom: 50px;
+  margin: 0 auto;
 }

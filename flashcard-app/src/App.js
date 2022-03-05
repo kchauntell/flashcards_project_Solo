@@ -4,7 +4,7 @@ import './App.css';
 import {Routes, Route} from 'react-router-dom';
 import HomePage from './components/HomePage/HomePage';
 import Header from './components/Header/Header';
-import { BrowserRouter } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
     <Routes>
       <Route exact path='/' element={<HomePage />} />
     </Routes>
+    <Footer />
     </>
   );
 }
