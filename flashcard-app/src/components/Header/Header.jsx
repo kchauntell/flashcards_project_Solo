@@ -8,7 +8,6 @@ function Header() {
       <h1>
         Welcome to !Find: Never Forget & ∞ Remember ∞
       </h1>
-      <div id='divider'></div>
     </div>
   )
 }
