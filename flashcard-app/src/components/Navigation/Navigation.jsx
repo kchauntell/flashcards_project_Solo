@@ -1,11 +1,11 @@
-import  ',/Navigation.css';
+import  './Navigation.css';
 import {NavLink} from 'react-router-dom';
 
 function Navigation (){
   return (
     <nav id='nav-container'>
-      <div id='home-button'>
-        <button>
+      <div id='home'>
+        <button id='home-button'>
           <NavLink to='/'> Home </NavLink>
         </button>
       </div>

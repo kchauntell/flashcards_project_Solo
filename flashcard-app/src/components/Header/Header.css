@@ -1,8 +1,14 @@
 #header-container {
   background-color: rgba(95, 95, 97, 0.829);
   color: rgb(13, 134, 233);
-  position: absolute;
-  top:0;
+  padding: 2px;
+  top: 0;
   width: 100%;
-  margin: 0 auto;
+  text-align: center;
+}
+
+#divider {
+  background-color: black;
+  border: 2px solid black;
+  margin:0 auto;
 }

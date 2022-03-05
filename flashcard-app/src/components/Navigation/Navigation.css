@@ -1,0 +1,34 @@
+#nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+#home {
+  float: left;
+  margin-left: 10px;
+}
+
+#home-button {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#login-signup-buttons {
+  display: flex;
+  float:right;
+  margin-right: 10px;
+}
+
+#login-button {
+  margin: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#signup-button {
+  margin: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
