@@ -10,27 +10,31 @@ public class User {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
-  @Column(name = "FIRST_NAME")
+  @Column(name = "FIRST_NAME", nullable=false)
   private String firstName;
 
-  @Column(name = "LAST_NAME")
+  @Column(name = "LAST_NAME", nullable=false)
   private String lastName;
 
-  @Column(name = "USER_NAME", unique = true)
+  @Column(name = "USER_NAME", nullable=false, unique = true)
   private String username;
 
-  @Column(name = "PASSWORD")
+  @Column(name = "EMAIL", nullable=false, unique = true)
+  private String email;
+
+  @Column(name = "PASSWORD", nullable=false)
   private String password;
 
   // Constructor
   public User() {
   }
 
-  public User(long id, String firstName, String lastName, String username, String password) {
+  public User(long id, String firstName, String lastName, String username, String email, String password) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.username = username;
+    this.email = email;
     this.password = password;
   }
 
@@ -67,6 +71,14 @@ public class User {
     this.username = username;
   }
 
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
   public String getPassword() {
     return password;
   }
@@ -82,6 +94,7 @@ public class User {
         ", firstName='" + firstName + '\'' +
         ", lastName='" + lastName + '\'' +
         ", username='" + username + '\'' +
+        ", email='" + email + '\'' +
         ", password='" + password + '\'' +
         '}';
   }
