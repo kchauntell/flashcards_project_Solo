@@ -22,20 +22,20 @@ public class User {
   @Column(name = "EMAIL", nullable=false, unique = true)
   private String email;
 
-  @Column(name = "PASSWORD", nullable=false)
-  private String password;
+  @Column(name = "HASHED_PASSWORD", nullable=false)
+  private String hashedPassword;
 
   // Constructor
   public User() {
   }
 
-  public User(long id, String firstName, String lastName, String username, String email, String password) {
+  public User(long id, String firstName, String lastName, String username, String email, String hashedPassword) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.username = username;
     this.email = email;
-    this.password = password;
+    this.hashedPassword = hashedPassword;
   }
 
   // Getters and Setters
@@ -79,13 +79,15 @@ public class User {
     this.email = email;
   }
 
-  public String getPassword() {
-    return password;
+  public String getHashedPassword() {
+    return hashedPassword;
   }
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setPassword(String hashedPassword) {
+    this.hashedPassword = hashedPassword;
   }
+
+
 
   @Override
   public String toString() {
@@ -95,7 +97,7 @@ public class User {
         ", lastName='" + lastName + '\'' +
         ", username='" + username + '\'' +
         ", email='" + email + '\'' +
-        ", password='" + password + '\'' +
+        ", hashedPassword='" + hashedPassword + '\'' +
         '}';
   }
 }
