@@ -1,11 +1,10 @@
 import './SignUpForm.css';
 import React,  { useState } from 'react';
-// import { useDispatch } from 'react-redux';
 import { Formik } from 'formik';
 
+//come back and add dispatch portions for getting everything to be functional.
 
 function SignUpForm() {
-  // const dispatch = useDispatch();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');

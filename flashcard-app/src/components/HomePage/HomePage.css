@@ -10,3 +10,29 @@ h1{
   margin: 0 auto;
   bottom: 0;
 }
+
+#homepage-columns {
+  display: flex;
+  margin: 10px auto;
+  height: 625px;
+
+}
+
+#left-navigation {
+  border: solid red 2px;
+  float: left;
+  width:25%;
+}
+
+#rightColumn {
+  border: solid red 2px;
+  float: right;
+  width:25%;
+
+}
+
+#body {
+  border: solid orange 2px;
+  margin: 0 auto;
+  width: 50%;
+}
