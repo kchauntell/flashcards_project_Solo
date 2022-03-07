@@ -16,9 +16,7 @@ function Navigation (){
           <button id='login-button'>
             <NavLink to='/login'> Log In </NavLink>
           </button>
-          <button id='signup-button'>
-            <SignUpForm />
-          </button>
+          <SignUpForm id='signup-button'/>
         </div>
       </div>
     </nav>
