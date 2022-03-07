@@ -1,5 +1,6 @@
 import  './Navigation.css';
 import {NavLink} from 'react-router-dom';
+import SignUpForm from '../SignUpModal'
 
 function Navigation (){
   return (
@@ -17,6 +18,7 @@ function Navigation (){
           </button>
           <button id='signup-button'>
             <NavLink to='/signup'> Sign Up </NavLink>
+            <SignUpForm />
           </button>
         </div>
       </div>

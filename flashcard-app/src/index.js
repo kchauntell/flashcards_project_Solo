@@ -3,15 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ModalProvider } from './context/Modal';
 
 import {BrowserRouter} from 'react-router-dom';
-import Header from './components/Header/Header';
 
 function Root() {
   return (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ModalProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ModalProvider>
   )
 }
 
