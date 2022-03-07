@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "flashcards")
 public class FlashCards {
+  User user;
 
   @Id
   @GeneratedValue
@@ -30,6 +31,7 @@ public class FlashCards {
   }
 
   public FlashCards(long id, String course, String question, String answer, String urlLink, long userId) {
+
     this.id = id;
     this.course = course;
     this.question = question;
