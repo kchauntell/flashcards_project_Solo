@@ -14,11 +14,8 @@ function Navigation (){
 
       <div id='login-signup-buttons'>
         <div>
-          <button id='login-button'>
-            <NavLink to='/login'> Log In </NavLink>
-          </button>
-          <LoginForm />
-          <SignUpForm id='signup-button'/>
+          <LoginForm/>
+          <SignUpForm/>
         </div>
       </div>
     </nav>

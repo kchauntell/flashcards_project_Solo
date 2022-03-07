@@ -11,15 +11,14 @@ function LoginForm () {
   const [errors, setError] = useState([])
 
   return (
-    <form id='loginForm'> LOG IN HERE!
-      <div>
-        <h3>Try Demo Mode!</h3>
-        <button
-          id='demoButton'
-          onClick={() => { setCredential('DemoUs'); setPassword('p@sswordDemo1')}}
-          type='submit'> Demo User</button>
-      </div>
+    <form id='loginForm'>
       <div id='loginModal'>
+        <h3>Try Demo Mode!</h3>
+        <div id='demoButtonDiv'>
+          <button
+            onClick={() => { setCredential('DemoUs'); setPassword('p@sswordDemo1')}}
+            type='submit'> Demo User</button>
+        </div>
         <div id='login-name'>
           <label>
             Username-OR-Email:
@@ -42,7 +41,7 @@ function LoginForm () {
             />
           </label>
         </div>
-        <div>
+        <div id='loginButtonDiv'>
           <button type='submit'>Log In</button>
         </div>
       </div>
