@@ -1,0 +1,50 @@
+#SignUpModal {
+  border-radius: 10px;
+  border-style: double;
+  box-shadow: 10px 10px darkmagenta;
+  padding: 20px;
+  margin: 0px auto;
+}
+
+#SignUpForm input{
+  width: 100%;
+  color: rgb(83, 86, 88);
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+#SignUpForm {
+  justify-content: center;
+  border-radius: 10px;
+}
+
+#SignupButtonDiv {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+#SignupButtonDiv button {
+  box-shadow: 3px 3px rgb(173, 161, 247);
+  background: url("../../colorfulclouds.png") no-repeat center bottom fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border: none;
+  padding: 5px 10px 5px 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+label {
+  color:darkmagenta;
+  font-weight: bold;
+  text-shadow: 2px 3px rgb(173, 161, 247);
+  font-size: 20px;
+  margin: 5px;
+  padding: 5px;
+}
