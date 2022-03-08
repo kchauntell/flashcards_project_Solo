@@ -1,5 +1,6 @@
 package com.genspark.flashcards_project.Service;
 
+import com.genspark.flashcards_project.Entity.Role;
 import com.genspark.flashcards_project.Entity.User;
 import com.genspark.flashcards_project.DAO.UserRepository;
 import com.genspark.flashcards_project.DAO.RolesRepository;
@@ -13,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 import java.util.Optional;
 
-@Service @Transactional @Slf4j
+@Service @Transactional
 public class UserServiceImpl implements UserService{
   @Autowired
   public UserRepository userRepository;
@@ -24,8 +25,6 @@ public class UserServiceImpl implements UserService{
     this.userRepository = userRepository;
     this.rolesRepository = rolesRepository;
   }
-
-  public UserServiceImpl(User)
 
   //JWOT
   @Override
