@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService{
 
   public UserServiceImpl(UserRepository userRepository) {
     this.userRepository = userRepository;
-    this.passwordEncoder = new BCryptPasswordEncoder();
+    this.passwordEncoder = new BCryptPasswordEncoder(16);
   }
 
   @Override
