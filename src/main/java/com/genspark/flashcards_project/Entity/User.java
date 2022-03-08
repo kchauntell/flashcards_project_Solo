@@ -4,26 +4,26 @@ package com.genspark.flashcards_project.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="users")
+@Table(name="USERS")
 public class User {
   @Id
   // @Column(name="ID")
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
-  @Column(name = "FIRST_NAME", nullable=false)
+  @Column(name = "first_name", nullable=false, columnDefinition="varchar(50)")
   private String firstName;
 
-  @Column(name = "LAST_NAME", nullable=false)
+  @Column(name = "last_name", nullable=false, columnDefinition = "varchar(50)")
   private String lastName;
 
-  @Column(name = "USER_NAME", nullable=false, unique = true)
+  @Column(name = "username", nullable=false, unique = true, columnDefinition = "varchar(25)")
   private String username;
 
-  @Column(name = "EMAIL", nullable=false, unique = true)
+  @Column(name = "email", nullable=false, unique = true, columnDefinition = "varchar(50)")
   private String email;
 
-  @Column(name = "HASHED_PASSWORD", nullable=false)
+  @Column(name = "hashed_password", nullable=false)
   private String hashedPassword;
 
   // Constructor

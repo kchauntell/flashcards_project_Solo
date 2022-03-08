@@ -3,25 +3,25 @@ package com.genspark.flashcards_project.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "flashcards")
+@Table(name = "FLASHCARDS")
 public class FlashCards {
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
-  @Column(name = "COURSE")
+  @Column(name = "course", columnDefinition="varchar(50)")
   private String course;
 
-  @Column(name = "QUESTION")
+  @Column(name = "question", columnDefinition="TEXT")
   private String question;
 
-  @Column(name = "ANSWER")
+  @Column(name = "answer", columnDefinition="TEXT")
   private String answer;
 
-  @Column(name = "REFERENCE")
+  @Column(name = "reference", columnDefinition="TEXT")
   private String urlLink;
 
-  @Column(name = "USER_ID")
+  @Column(name = "userId")
   private long userId;
 
   // Constructors
