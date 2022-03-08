@@ -71,7 +71,8 @@ public class UserServiceImpl implements UserService{
       userToUpdate.setEmail(user.getEmail());
     }
     if (user.getHashedPassword() != null) {
-      userToUpdate.setPassword(user.getHashedPassword());
+      String encoded = this.passwordEncoder.encode(user.getHashedPassword());
+      userToUpdate.setPassword(encoded);
     }
 
     User userUpdated = this.userRepository.save(userToUpdate);
