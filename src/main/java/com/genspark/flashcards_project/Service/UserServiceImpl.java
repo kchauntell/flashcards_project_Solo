@@ -5,7 +5,8 @@ import com.genspark.flashcards_project.DAO.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,8 +15,11 @@ public class UserServiceImpl implements UserService{
   @Autowired
   public UserRepository userRepository;
 
+  public PasswordEncoder passwordEncoder;
+
   public UserServiceImpl(UserRepository userRepository) {
     this.userRepository = userRepository;
+    this.passwordEncoder = new BCryptPasswordEncoder();
   }
 
   @Override
@@ -41,6 +45,8 @@ public class UserServiceImpl implements UserService{
 
   @Override
   public User addUser(User user) {
+    String encoded = this.passwordEncoder.encode(user.getHashedPassword());
+    user.setPassword(encoded);
     return this.userRepository.save(user);
   }
 
