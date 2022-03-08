@@ -5,8 +5,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "flashcards")
 public class FlashCards {
-  User user;
-
   @Id
   @GeneratedValue
   private long id;
