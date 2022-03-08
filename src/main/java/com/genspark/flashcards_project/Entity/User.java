@@ -1,4 +1,6 @@
 package com.genspark.flashcards_project.Entity;
+import java.util.Collection;
+import java.util.ArrayList;
 
 import javax.persistence.*;
 
@@ -25,17 +27,29 @@ public class User {
   @Column(name = "HASHED_PASSWORD", nullable=false)
   private String hashedPassword;
 
+  // Eager because want to load all the roles in the database
+  @ManyToMany(fetch = FetchType.EAGER)
+  private Collection<Role> roles = new ArrayList<>();
+
   // Constructor
   public User() {
   }
 
-  public User(long id, String firstName, String lastName, String username, String email, String hashedPassword) {
+  public User(
+              long id,
+              String firstName,
+              String lastName,
+              String username,
+              String email,
+              String hashedPassword,
+              Collection<Role> roles) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.username = username;
     this.email = email;
     this.hashedPassword = hashedPassword;
+    this.roles = roles;
   }
 
   // Getters and Setters
@@ -87,6 +101,15 @@ public class User {
     this.hashedPassword = hashedPassword;
   }
 
+  public Collection<Role> getRoles() {
+    return roles;
+  }
+
+  public void setRoles(Collection<Role> roles)  {
+    this.roles = roles;
+  }
+
+
 
 
   @Override
@@ -98,6 +121,7 @@ public class User {
         ", username='" + username + '\'' +
         ", email='" + email + '\'' +
         ", hashedPassword='" + hashedPassword + '\'' +
+        ", roles='" + roles + '\'' +
         '}';
   }
 }
