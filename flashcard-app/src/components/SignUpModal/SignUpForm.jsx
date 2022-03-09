@@ -1,5 +1,6 @@
 import './SignUpForm.css';
-import React,  { useState } from 'react';
+import React,  { useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import UserDataService  from '../../service/UserDataService';
 
 //come back and add dispatch portions for getting everything to be functional.
@@ -12,9 +13,25 @@ function SignUpForm() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  // const PWD_REGEX= /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}/;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(password === confirmPassword) {
+      return UserDataService.addUser({
+        firstName,
+        lastName,
+        username,
+        email,
+        password,
+      });
+    } else {
+      return "Passwords Do Not Match"
+    }
+  }
 
   return (
-    <form id='SignUpForm'>
+    <form id='SignUpForm' onSubmit={handleSubmit}>
       <div id='SignUpModal'>
         <div>
           <label>
@@ -75,7 +92,7 @@ function SignUpForm() {
           <label>
             Confirm Password:
             <input
-              type="confirm"
+              type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
@@ -83,7 +100,8 @@ function SignUpForm() {
           </label>
         </div>
         <div id='SignupButtonDiv'>
-          <button type='submit'>Sign Up</button>
+          <button
+          type="submit">Sign Up</button>
         </div>
       </div>
     </form>

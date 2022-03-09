@@ -1,7 +1,11 @@
 import './HomePage.css';
-import Header from '../Header/Header';
+import FlashCardDataService from '../../service/FlashCardDataService';
+import {useState} from 'react-router-dom';
+
 
 function HomePage() {
+
+
   return (
     <div id='homepage-container'>
       <h1> Let's Get Started!</h1>
