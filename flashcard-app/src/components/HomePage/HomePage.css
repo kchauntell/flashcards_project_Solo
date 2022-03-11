@@ -26,7 +26,7 @@ h1{
   width: 300px;
   height: 200px;
   overflow:unset;
-  margin-top: 10px;
+  margin: 3px;
   padding: 5px;
   color: green;
 }

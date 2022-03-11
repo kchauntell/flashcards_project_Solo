@@ -1,8 +1,6 @@
 import './HomePage.css';
 import FlashCardDataService from '../../service/FlashCardDataService';
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-
 
 function HomePage() {
   const [allFlashcards, setAllFlashCards] = useState([]);
