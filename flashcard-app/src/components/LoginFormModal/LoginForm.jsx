@@ -13,7 +13,7 @@ function LoginForm () {
   return (
     <form id='loginForm'>
       <div id='loginModal'>
-        <h3>Try Demo Mode!</h3>
+        <h3 id='login-demo'>Try Demo Mode!</h3>
         <div id='demoButtonDiv'>
           <button
             onClick={() => { setCredential('DemoUs'); setPassword('p@sswordDemo1')}}

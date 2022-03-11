@@ -1,7 +1,7 @@
 #homepage-container{
-  margin: 20px auto;
+  margin: 15px auto;
   text-align: center;
-  top: 0;
+  top: 10;
   bottom: 0;
   height: 100%;
 
@@ -10,27 +10,6 @@
 h1{
   margin: 0 auto;
   bottom: 0;
-}
-
-#homepage-columns {
-  display: flex;
-  margin: 10px auto;
-  height: 625px;
-
-}
-
-#left-navigation {
-  border: solid red 2px;
-  float: left;
-  width:25%;
-}
-
-#rightColumn {
-  border: solid red 2px;
-  float: right;
-  width:25%;
-  height: 100%;
-
 }
 
 #body {
@@ -42,19 +21,27 @@ h1{
 
 
 /* Cards displayed */
-#card-container {
-  display: flex;
-  grid-template: auto;
-  margin: 0 auto;
-  width: 80%;
-  float: right;
-  height: 100%;
-
+#front {
+  border: 2px blue solid;
+  width: 300px;
+  height: 200px;
+  overflow:unset;
+  margin-top: 10px;
+  padding: 5px;
+  color: green;
 }
 
-#frontCard {
-  width: 250px;
-  height: 200px;
-  border: 2px solid blue;
-  margin: 0 auto;
+#cards-container {
+  display: inline-flex;
+}
+
+#topic {
+  color: purple;
+  font-family: 'Bungee Shade', cursive;
+  font-size: 24px;
+}
+
+#card-question{
+  margin-top: 15px;
+  color: red;
 }

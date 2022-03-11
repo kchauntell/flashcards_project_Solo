@@ -14,15 +14,11 @@ code {
 }
 
 html {
-  height: 100%;
-}
-
-html {
-  height: 100%;
+  height: 95%;
 }
 
 *{
   margin: 0;
-  padding: 0;
+  padding: 0px 0px 3px 0px;
   box-sizing: border-box;
 }
