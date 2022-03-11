@@ -1,7 +1,7 @@
 import './HomePage.css';
 import FlashCardDataService from '../../service/FlashCardDataService';
 import { useState, useEffect } from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 function HomePage() {
@@ -29,8 +29,6 @@ function HomePage() {
   let arrTopics = [...topics];
 
 
-
-
   return (
     <div id='homepage-container'>
       <h1> Let's Get Started!</h1>
@@ -38,23 +36,23 @@ function HomePage() {
       <div>
         {arrTopics.map((topic) => {
           return (
-            <div key = {topic }>
+            <div key={topic}>
               <div>
                 <h3 id='topic'>{topic}</h3>
               </div>
-            {allFlashcards.map((card) => {
-              if(topic == card.course) {
-                return (
-                  <div key ={card.id} id='cards-container'>
-                    <div id='front'> Question?
-                      <div id='card-question'>
-                      {card.question}
+              {allFlashcards.map((card) => {
+                if (topic == card.course) {
+                  return (
+                    <div key={card.id} id='cards-container'>
+                      <div id='front'> Question?
+                        <div id='card-question'>
+                          {card.question}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )
-              }
-            })}
+                  )
+                }
+              })}
             </div>
           )
         })}

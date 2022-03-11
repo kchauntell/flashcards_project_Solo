@@ -8,7 +8,6 @@ function LoginForm () {
 
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
-  const [errors, setError] = useState([])
 
   return (
     <form id='loginForm'>
