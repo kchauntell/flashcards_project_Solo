@@ -3,6 +3,7 @@
   text-align: center;
   top: 0;
   bottom: 0;
+  height: 100%;
 
 }
 
@@ -28,6 +29,7 @@ h1{
   border: solid red 2px;
   float: right;
   width:25%;
+  height: 100%;
 
 }
 
@@ -35,4 +37,24 @@ h1{
   border: solid orange 2px;
   margin: 0 auto;
   width: 50%;
+  height: 100%;
+}
+
+
+/* Cards displayed */
+#card-container {
+  display: flex;
+  grid-template: auto;
+  margin: 0 auto;
+  width: 80%;
+  float: right;
+  height: 100%;
+
+}
+
+#frontCard {
+  width: 250px;
+  height: 200px;
+  border: 2px solid blue;
+  margin: 0 auto;
 }

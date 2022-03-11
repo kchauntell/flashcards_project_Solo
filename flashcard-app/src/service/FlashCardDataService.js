@@ -4,7 +4,6 @@ class FlashCardDataService {
 
   retrieveAllFlashCards = () => {
     return axios.get(`http://localhost:8080/flashcards`)
-      // .then(response => console.log(response.data))
   }
   retrieveFlashCard(id) {
     return axios.get(`http://localhost:8080/flashcards/${id}`)

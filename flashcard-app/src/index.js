@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ModalProvider } from './context/Modal';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 import {BrowserRouter} from 'react-router-dom';
 
