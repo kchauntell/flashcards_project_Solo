@@ -28,7 +28,7 @@ public class User {
   private @NotBlank String hashedPassword;
 
   @Column(name = "is_logged_in")
-  private @NotBlank boolean isLoggedIn;
+  private @NotBlank Boolean isLoggedIn =false;
 
   // Constructor
   public User() {
@@ -103,7 +103,7 @@ public class User {
     return isLoggedIn;
   }
 
-  public void setIsLoggedIn(boolean isLoggedIn) {
+  public void setIsLoggedIn(Boolean isLoggedIn) {
     this.isLoggedIn = isLoggedIn;
   }
 

@@ -32,7 +32,8 @@ public class UserController {
   }
 
   @PostMapping("/users")
-  public User addUser(@RequestBody User user) {
+  public User addUser(@ Valid @RequestBody User user) {
+    this.userService.registerUser(user);
     return this.userService.addUser(user);
   }
 
@@ -48,22 +49,22 @@ public class UserController {
   }
 
   //Register the user
-  @PostMapping("/users/register")
-  public Status registerUser(@Valid @RequestBody User newUser) {
-    List<User> users = userRepository.findAll();
+  // @PostMapping("/signup")
+  // public Status registerUser(@Valid @RequestBody User newUser) {
+  //   List<User> users = userRepository.findAll();
 
-    for (User user : users) {
-      if(user.equals(newUser)) {
-        System.out.println("USER ALREADY EXISTS!");
-        return Status.USER_ALREADY_EXISTS;
-      }
-    }
-    userRepository.save(newUser);
-    return Status.SUCCESS;
-  }
+  //   for (User user : users) {
+  //     if(user.equals(newUser)) {
+  //       System.out.println("USER ALREADY EXISTS!");
+  //       return Status.USER_ALREADY_EXISTS;
+  //     }
+  //   }
+  //   userRepository.save(newUser);
+  //   return Status.SUCCESS;
+  // }
 
   // Setting up for Login
-  @PostMapping("/users/login")
+  @PostMapping("/login")
   public Status loginUser(@Valid @RequestBody User user) {
     List<User> users = userRepository.findAll();
 
@@ -78,7 +79,7 @@ public class UserController {
   }
 
   //Logout user
-  @PostMapping("users/logout")
+  @PostMapping("/logout")
   public Status logUserOut(@Valid @RequestBody User user) {
     List<User> users = userRepository.findAll();
 

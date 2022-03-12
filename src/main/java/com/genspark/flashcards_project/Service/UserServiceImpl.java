@@ -1,6 +1,7 @@
 package com.genspark.flashcards_project.Service;
 
 import com.genspark.flashcards_project.Entity.User;
+import com.genspark.flashcards_project.Entity.Status;
 import com.genspark.flashcards_project.DAO.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,6 +49,20 @@ public class UserServiceImpl implements UserService{
     String encoded = this.passwordEncoder.encode(user.getHashedPassword());
     user.setPassword(encoded);
     return this.userRepository.save(user);
+  }
+
+  @Override
+  public Status registerUser(User newUser) {
+    List<User> users = userRepository.findAll();
+
+    for (User user : users) {
+      if (user.equals(newUser)) {
+        System.out.println("USER ALREADY EXISTS!");
+        return Status.USER_ALREADY_EXISTS;
+      }
+    }
+    userRepository.save(newUser);
+    return Status.SUCCESS;
   }
 
   @Override
