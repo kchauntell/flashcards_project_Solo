@@ -1,5 +1,6 @@
 import './LoginForm.css';
 import React, { useState } from 'react';
+import UserDataService from '../../service/UserDataService';
 
 // Don't forget about dispatch for this
 //working to get the login area set up. Then refactor with functionality
@@ -9,8 +10,14 @@ function LoginForm () {
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
 
+
+  const handleSubmit= (e) => {
+    return UserDataService.userLogin(credential, password);
+  }
+
+
   return (
-    <form id='loginForm'>
+    <form id='loginForm' onSubmit={handleSubmit}>
       <div id='loginModal'>
         <h3 id='login-demo'>Try Demo Mode!</h3>
         <div id='demoButtonDiv'>

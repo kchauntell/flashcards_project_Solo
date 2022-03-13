@@ -1,6 +1,6 @@
-INSERT INTO users (first_name, last_name, username, email, hashed_password) VALUES
-('Demo','User', 'DemoUser','demoUser@demoEmail.io','p@sswordDemo1'),
-('Kendra','Chauntell','KChauntell','kchauntell@awesome.io','Kendr@89');
+-- INSERT INTO users (first_name, last_name, username, email, hashed_password) VALUES
+-- ('Demo','User', 'DemoUser','demoUser@demoEmail.io','p@sswordDemo1'),
+-- ('Kendra','Chauntell','KChauntell','kchauntell@awesome.io','Kendr@89');
 
 
 INSERT INTO flashcards (course, question, answer, reference, user_id) VALUES

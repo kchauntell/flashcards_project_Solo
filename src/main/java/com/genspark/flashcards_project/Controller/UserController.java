@@ -31,12 +31,6 @@ public class UserController {
     return this.userService.getUser(id);
   }
 
-  @PostMapping("/users")
-  public User addUser(@ Valid @RequestBody User user) {
-    this.userService.registerUser(user);
-    return this.userService.addUser(user);
-  }
-
   @PutMapping("/users")
   public User updateUser(@RequestBody User user) {
     return this.userService.updateUser(user);
@@ -48,28 +42,28 @@ public class UserController {
     return "Successfully Deleted User with ID: " + id;
   }
 
-  //Register the user
-  // @PostMapping("/signup")
-  // public Status registerUser(@Valid @RequestBody User newUser) {
-  //   List<User> users = userRepository.findAll();
+  // Register the user
+  @PostMapping("/signup")
+  public Status registerUser(@Valid @RequestBody User newUser) {
+    List<User> users = userRepository.findAll();
 
-  //   for (User user : users) {
-  //     if(user.equals(newUser)) {
-  //       System.out.println("USER ALREADY EXISTS!");
-  //       return Status.USER_ALREADY_EXISTS;
-  //     }
-  //   }
-  //   userRepository.save(newUser);
-  //   return Status.SUCCESS;
-  // }
+    for (User user : users) {
+      if (user.equals(newUser)) {
+        System.out.println("USER ALREADY EXISTS!");
+        return Status.USER_ALREADY_EXISTS;
+      }
+    }
+    userRepository.save(newUser);
+    return Status.SUCCESS;
+  }
 
   // Setting up for Login
   @PostMapping("/login")
   public Status loginUser(@Valid @RequestBody User user) {
     List<User> users = userRepository.findAll();
 
-    for(User other : users) {
-      if(other.equals(user)) {
+    for (User other : users) {
+      if (other.equals(user)) {
         user.setIsLoggedIn(true);
         userRepository.save(user);
         return Status.SUCCESS;
@@ -78,13 +72,13 @@ public class UserController {
     return Status.FAILURE;
   }
 
-  //Logout user
+  // Logout user
   @PostMapping("/logout")
   public Status logUserOut(@Valid @RequestBody User user) {
     List<User> users = userRepository.findAll();
 
-    for(User other : users) {
-      if(other.equals(user)) {
+    for (User other : users) {
+      if (other.equals(user)) {
         user.setIsLoggedIn(false);
         userRepository.save(user);
         return Status.SUCCESS;

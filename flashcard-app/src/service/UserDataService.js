@@ -10,7 +10,7 @@ class UserDataService {
   }
 
   addUser(user) {
-    return axios.post(`http://localhost:8080/api/users`, user);
+    return axios.post(`http://localhost:8080/api/signup`, user);
   }
 
   updateUser(user) {
@@ -19,6 +19,10 @@ class UserDataService {
 
   deleteUser(id) {
     return axios.delete(`http://localhost:8080/api/users/${id}`)
+  }
+
+  userLogin(username, password){
+    return axios.post(`http://localhost:8080/api/login`, username, password);
   }
 }
 
