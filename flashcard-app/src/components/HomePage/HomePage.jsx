@@ -39,7 +39,7 @@ function HomePage() {
                 <h3 id='topic'>{topic}</h3>
               </div>
               {allFlashcards.map((card) => {
-                if (topic == card.course) {
+                if (topic === card.course) {
                   return (
                     <div key={card.id} id='cards-container'>
                       <div id='front'> Question?

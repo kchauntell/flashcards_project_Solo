@@ -45,13 +45,6 @@ public class UserServiceImpl implements UserService{
   }
 
   @Override
-  public User addUser(User user) {
-    String encoded = this.passwordEncoder.encode(user.getHashedPassword());
-    user.setPassword(encoded);
-    return this.userRepository.save(user);
-  }
-
-  @Override
   public Status registerUser(User newUser) {
     List<User> users = userRepository.findAll();
 

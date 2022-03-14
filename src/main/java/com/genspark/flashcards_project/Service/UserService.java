@@ -11,7 +11,6 @@ public interface UserService {
   Optional<User> getUser(Long id);
   User getUserByUsername(String username);
   User getUserByEmail(String email);
-  User addUser(User user);
   Status registerUser(User user);
   User updateUser(User user);
   String deleteUser(Long id);

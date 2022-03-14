@@ -30,6 +30,7 @@ function SignUpForm() {
     }
   }
 
+
   return (
     <form id='SignUpForm' onSubmit={handleSubmit}>
       <div id='SignUpModal'>

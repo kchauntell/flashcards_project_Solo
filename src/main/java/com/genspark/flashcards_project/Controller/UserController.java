@@ -51,16 +51,12 @@ public class UserController {
   // Setting up for Login
   @PostMapping("/login")
   public Status loginUser(@Valid @RequestBody User user) {
-    List<User> users = this.userRepository.findAll();
+    Optional<User> userToLogin = this.userService.getUser(user.getId());
+    if(userToLogin.isEmpty()) return Status.FAILURE;
 
-    for (User other : users) {
-      if (other.equals(user)) {
-        user.setIsLoggedIn(true);
-        this.userRepository.save(user);
-        return Status.SUCCESS;
-      }
-    }
-    return Status.FAILURE;
+    user.setIsLoggedIn(true);
+    this.userRepository.save(user);
+    return Status.SUCCESS;
   }
 
   // Logout user
