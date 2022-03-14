@@ -61,6 +61,9 @@ public class UserServiceImpl implements UserService{
         return Status.USER_ALREADY_EXISTS;
       }
     }
+
+    String encoded = this.passwordEncoder.encode(newUser.getHashedPassword());
+    newUser.setPassword(encoded);
     userRepository.save(newUser);
     return Status.SUCCESS;
   }

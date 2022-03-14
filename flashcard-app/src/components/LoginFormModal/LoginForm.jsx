@@ -1,5 +1,6 @@
 import './LoginForm.css';
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 import UserDataService from '../../service/UserDataService';
 
 // Don't forget about dispatch for this
@@ -9,10 +10,12 @@ function LoginForm () {
 
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
 
   const handleSubmit= (e) => {
-    return UserDataService.userLogin(credential, password);
+    UserDataService.userLogin(credential, password);
+    return navigate('/');
   }
 
 

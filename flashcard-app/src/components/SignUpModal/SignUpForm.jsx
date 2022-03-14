@@ -12,17 +12,19 @@ function SignUpForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
-      return UserDataService.addUser({
+      UserDataService.addUser({
         firstName,
         lastName,
         username,
         email,
         password,
       });
+      return navigate('/');
     } else {
       return "Passwords Do Not Match"
     }

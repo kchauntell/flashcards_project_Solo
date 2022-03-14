@@ -45,27 +45,18 @@ public class UserController {
   // Register the user
   @PostMapping("/signup")
   public Status registerUser(@Valid @RequestBody User newUser) {
-    List<User> users = userRepository.findAll();
-
-    for (User user : users) {
-      if (user.equals(newUser)) {
-        System.out.println("USER ALREADY EXISTS!");
-        return Status.USER_ALREADY_EXISTS;
-      }
-    }
-    userRepository.save(newUser);
-    return Status.SUCCESS;
+    return this.userService.registerUser(newUser);
   }
 
   // Setting up for Login
   @PostMapping("/login")
   public Status loginUser(@Valid @RequestBody User user) {
-    List<User> users = userRepository.findAll();
+    List<User> users = this.userRepository.findAll();
 
     for (User other : users) {
       if (other.equals(user)) {
         user.setIsLoggedIn(true);
-        userRepository.save(user);
+        this.userRepository.save(user);
         return Status.SUCCESS;
       }
     }
@@ -80,7 +71,7 @@ public class UserController {
     for (User other : users) {
       if (other.equals(user)) {
         user.setIsLoggedIn(false);
-        userRepository.save(user);
+        this.userRepository.save(user);
         return Status.SUCCESS;
       }
     }
